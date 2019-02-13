@@ -1,10 +1,10 @@
 class UserResponseEntity {
-	UserResponseUser user;
+	User user;
 
 	UserResponseEntity({this.user});
 
 	UserResponseEntity.fromJson(Map<String, dynamic> json) {
-		user = json['user'] != null ? new UserResponseUser.fromJson(json['user']) : null;
+		user = json['user'] != null ? new User.fromJson(json['user']) : null;
 	}
 
 	Map<String, dynamic> toJson() {
@@ -16,16 +16,16 @@ class UserResponseEntity {
 	}
 }
 
-class UserResponseUser {
+class User {
 	String image;
 	String bio;
 	String email;
 	String token;
 	String username;
 
-	UserResponseUser({this.image, this.bio, this.email, this.token, this.username});
+	User({this.image, this.bio, this.email, this.token, this.username});
 
-	UserResponseUser.fromJson(Map<String, dynamic> json) {
+	User.fromJson(Map<String, dynamic> json) {
 		image = json['image'];
 		bio = json['bio'];
 		email = json['email'];
