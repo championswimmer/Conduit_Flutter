@@ -1,6 +1,6 @@
 
-import 'package:conduit/widgets/appbar.dart';
-import 'package:conduit/widgets/navdrawer.dart';
+import 'package:conduit/widgets/main/appbar.dart';
+import 'package:conduit/widgets/main/navdrawer.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatelessWidget {
