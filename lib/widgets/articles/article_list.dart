@@ -23,10 +23,25 @@ class _ArticlesState extends State<ArticlesList> {
       builder: (BuildContext context,
           AsyncSnapshot<ArticlesResponseEntity> snapshot) {
         if (snapshot.hasData) {
-          return ListView.builder(itemBuilder: null);
-        }
+          debugPrint("ARTICLES  = " + snapshot.data.articlescount.toString());
 
-        return CircularProgressIndicator();
+          return ListView.builder(
+            itemCount: snapshot.data.articles.length,
+            itemBuilder: (c, i) {
+              return Container(
+                padding: EdgeInsets.all(10),
+                child: Card(
+                  elevation: 5,
+                  child: Text(snapshot.data.articles[i].title),
+                ),
+              );
+            },
+          );
+        }
+        return Container(
+          child: CircularProgressIndicator(),
+          alignment: Alignment(0, 0),
+        );
       },
     );
   }
