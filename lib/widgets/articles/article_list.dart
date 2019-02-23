@@ -32,7 +32,20 @@ class _ArticlesState extends State<ArticlesList> {
                 padding: EdgeInsets.all(10),
                 child: Card(
                   elevation: 5,
-                  child: Text(snapshot.data.articles[i].title),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          snapshot.data.articles[i].title,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 14),
+                        ),
+                        Text(snapshot.data.articles[i].body)
+                      ],
+                    ),
+                  )
                 ),
               );
             },

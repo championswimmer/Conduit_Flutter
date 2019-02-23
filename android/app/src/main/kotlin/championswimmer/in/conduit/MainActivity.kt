@@ -1,4 +1,4 @@
-package championswimmer.in.conduit
+package championswimmer.`in`.conduit
 
 import android.os.Bundle
 
