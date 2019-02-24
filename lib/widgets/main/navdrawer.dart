@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class _DrawerItemsState extends State<DrawerItems> {
+class _DrawerItemsState extends State<_DrawerItems> {
   var selectedRoute = '/';
   _DrawerItemsState(this.selectedRoute);
   _createItem(String title, IconData icon, String route) => ListTile(
@@ -28,10 +28,10 @@ class _DrawerItemsState extends State<DrawerItems> {
 
 }
 
-class DrawerItems extends StatefulWidget {
+class _DrawerItems extends StatefulWidget {
   _DrawerItemsState state;
   @override
-  State<DrawerItems> createState() {
+  State<_DrawerItems> createState() {
     if (state == null) {
       state = _DrawerItemsState('/');
     } else {
@@ -42,7 +42,7 @@ class DrawerItems extends StatefulWidget {
 }
 
 class MainNavDrawer extends StatelessWidget {
-  var drawerItems = DrawerItems();
+  var drawerItems = _DrawerItems();
   @override
   Widget build(BuildContext context) {
     return Drawer(
