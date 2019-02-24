@@ -1,3 +1,4 @@
+import 'package:conduit/pages/auth.dart';
 import 'package:conduit/pages/home.dart';
 import 'package:conduit/pages/settings.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/settings': (context) => SettingsPage()
+        '/settings': (context) => SettingsPage(),
+        '/auth': (context) => AuthPage()
       },
       title: 'Conduit',
       theme: ThemeData(

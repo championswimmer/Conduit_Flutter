@@ -36,7 +36,8 @@ class MainNavDrawer extends StatelessWidget {
           ),
         ),
         DrawerItem(icon: Icons.home, label: 'Home', goToRoute: '/'),
-        DrawerItem(icon: Icons.settings, label: 'Settings', goToRoute: '/settings')
+        DrawerItem(icon: Icons.person, label: 'Login / Signup', goToRoute: '/auth',),
+        DrawerItem(icon: Icons.settings, label: 'Settings', goToRoute: '/settings'),
       ],
     ));
   }
