@@ -1,5 +1,22 @@
 import 'package:flutter/material.dart';
 
+class DrawerItem extends ListTile {
+  IconData icon;
+  String label;
+  String goToRoute;
+
+  DrawerItem({this.icon, this.label, this.goToRoute});
+
+  @override
+  Widget build(BuildContext context) => ListTile(
+        title: Text(label),
+        leading: Icon(icon),
+        onTap: () {
+          Navigator.pushReplacementNamed(context, goToRoute);
+        },
+      );
+}
+
 class MainNavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,37 +31,12 @@ class MainNavDrawer extends StatelessWidget {
           alignment: Alignment(0, 0),
           child: Text(
             'conduit',
-            style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-        FlatButton(
-          child: Row(
-            children: <Widget>[
-              Icon(Icons.home),
-              Padding(
-                padding: EdgeInsets.all(10),
-              ),
-              Text('Home')
-            ],
-          ),
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, '/');
-          },
-        ),
-        FlatButton(
-          child: Row(
-            children: <Widget>[
-              Icon(Icons.settings),
-              Padding(
-                padding: EdgeInsets.all(10),
-              ),
-              Text('Settings')
-            ],
-          ),
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, '/settings');
-          },
-        )
+        DrawerItem(icon: Icons.home, label: 'Home', goToRoute: '/'),
+        DrawerItem(icon: Icons.settings, label: 'Settings', goToRoute: '/settings')
       ],
     ));
   }

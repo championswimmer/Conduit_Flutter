@@ -1,5 +1,5 @@
 
-import 'package:conduit/api/conduit_api.dart';
+import 'package:conduit/api/conduit/articles.dart';
 import 'package:conduit/widgets/articles/article_list.dart';
 import 'package:conduit/widgets/main/appbar.dart';
 import 'package:conduit/widgets/main/navdrawer.dart';

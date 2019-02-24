@@ -1,5 +1,6 @@
-import 'package:conduit/api/conduit_api.dart';
+import 'package:conduit/api/conduit/articles.dart';
 import 'package:conduit/models/articles_response_entity.dart';
+import 'package:conduit/widgets/articles/article_card.dart';
 import 'package:flutter/material.dart';
 
 class ArticlesList extends StatefulWidget {
@@ -27,28 +28,7 @@ class _ArticlesState extends State<ArticlesList> {
 
           return ListView.builder(
             itemCount: snapshot.data.articles.length,
-            itemBuilder: (c, i) {
-              return Container(
-                padding: EdgeInsets.all(10),
-                child: Card(
-                  elevation: 5,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          snapshot.data.articles[i].title,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14),
-                        ),
-                        Text(snapshot.data.articles[i].body)
-                      ],
-                    ),
-                  )
-                ),
-              );
-            },
+            itemBuilder: (c, i) => ArticleCard(snapshot.data.articles[i])
           );
         }
         return Container(
