@@ -8,7 +8,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MainNavDrawer(),
+      drawer: mainNavDrawer,
       body: Text("Settings"),
       appBar: appbar,
     );

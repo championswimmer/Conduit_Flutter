@@ -6,7 +6,7 @@ class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: MainNavDrawer(),
+        drawer: mainNavDrawer,
         bottomNavigationBar: BottomNavigationBar(items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.person_add),

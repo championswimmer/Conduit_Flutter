@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      drawer: MainNavDrawer(),
+      drawer: mainNavDrawer,
       body: ArticlesList(),
       appBar: appbar
     );
