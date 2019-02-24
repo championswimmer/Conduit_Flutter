@@ -1,4 +1,4 @@
-import 'package:conduit/pages/auth.dart';
+import 'package:conduit/pages/auth/index.dart';
 import 'package:conduit/pages/home.dart';
 import 'package:conduit/pages/settings.dart';
 import 'package:flutter/material.dart';
