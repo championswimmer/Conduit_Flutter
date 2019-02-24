@@ -1,23 +1,48 @@
 import 'package:flutter/material.dart';
 
-class DrawerItem extends ListTile {
-  final IconData icon;
-  final String label;
-  final String goToRoute;
-
-  DrawerItem({this.icon, this.label, this.goToRoute});
+class _DrawerItemsState extends State<DrawerItems> {
+  var selectedRoute = '/';
+  _DrawerItemsState(this.selectedRoute);
+  _createItem(String title, IconData icon, String route) => ListTile(
+    title: Text(title),
+    leading: Icon(icon),
+    selected: selectedRoute == route,
+    onTap: () {
+      Navigator.pushReplacementNamed(context, route);
+      setState(() {
+        selectedRoute = route;
+      });
+    },
+  );
 
   @override
-  Widget build(BuildContext context) => ListTile(
-        title: Text(label),
-        leading: Icon(icon),
-        onTap: () {
-          Navigator.pushReplacementNamed(context, goToRoute);
-        },
-      );
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        _createItem('Home', Icons.home, '/'),
+        _createItem('Login / Signup', Icons.person, '/auth'),
+        _createItem('Settings', Icons.settings, '/settings'),
+      ],
+    );
+  }
+
+}
+
+class DrawerItems extends StatefulWidget {
+  _DrawerItemsState state;
+  @override
+  State<DrawerItems> createState() {
+    if (state == null) {
+      state = _DrawerItemsState('/');
+    } else {
+      state = _DrawerItemsState(state.selectedRoute);
+    }
+    return state;
+  }
 }
 
 class MainNavDrawer extends StatelessWidget {
+  var drawerItems = DrawerItems();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -35,12 +60,13 @@ class MainNavDrawer extends StatelessWidget {
                 color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-        DrawerItem(icon: Icons.home, label: 'Home', goToRoute: '/'),
-        DrawerItem(icon: Icons.person, label: 'Login / Signup', goToRoute: '/auth',),
-        DrawerItem(icon: Icons.settings, label: 'Settings', goToRoute: '/settings'),
+        drawerItems
       ],
     ));
   }
 }
 
-final mainNavDrawer = MainNavDrawer();
+final _mainNavDrawer = MainNavDrawer();
+get mainNavDrawer {
+  return _mainNavDrawer;
+}

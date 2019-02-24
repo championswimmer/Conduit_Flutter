@@ -16,7 +16,7 @@ class AuthPage extends StatelessWidget {
             icon: Icon(Icons.vpn_key),
             title: Text('Login'),
           )
-        ]),
+        ],),
         body: Container(
           alignment: Alignment(0, 0),
           child: Text('Wow'),
