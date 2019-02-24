@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DrawerItem extends ListTile {
-  IconData icon;
-  String label;
-  String goToRoute;
+  final IconData icon;
+  final String label;
+  final String goToRoute;
 
   DrawerItem({this.icon, this.label, this.goToRoute});
 

@@ -3,7 +3,7 @@ import 'package:conduit/models/article_response_entity.dart';
 import 'package:flutter/material.dart';
 
 class ArticleCard extends Container {
-  Article article;
+  final Article article;
   ArticleCard(this.article);
 
   @override
