@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +20,7 @@ class LoginFragment extends StatelessWidget {
               cursorColor: Colors.green[400],
               decoration: InputDecoration(
                 border: InputBorder.none,
-                labelText: 'username',
+                labelText: 'email',
               ),
             ),
             TextFormField(
@@ -33,11 +32,24 @@ class LoginFragment extends StatelessWidget {
                 labelText: 'password',
               ),
             ),
-
+            FlatButton(
+              child: Text("Login"),
+              textColor: Colors.white,
+              color: Colors.green[600],
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  style: BorderStyle.solid,
+                  width: 2,
+                  color: Colors.green[600]
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(10))
+              ),
+              onPressed: () {
+              },
+            )
           ],
         ),
       ),
     );
   }
-
 }
