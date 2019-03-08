@@ -1,8 +1,11 @@
+import 'package:conduit/models/user_response_entity.dart';
 import 'package:flutter/material.dart';
 
-class _DrawerItemsState extends State<_DrawerItems> {
+class _DrawerItemsState extends State<_DrawerItems> with RouteAware {
   var selectedRoute = '/';
+
   _DrawerItemsState(this.selectedRoute);
+
   _createItem(String title, IconData icon, String route) => ListTile(
     title: Text(title),
     leading: Icon(icon),
